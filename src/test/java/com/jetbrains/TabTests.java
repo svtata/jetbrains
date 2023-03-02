@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 public class TabTests extends TestBase {
 
-    @Tag("check")
     @DisplayName("Checking tabs on the main page")
     @Test
     void checkMainPageTabsTest() {

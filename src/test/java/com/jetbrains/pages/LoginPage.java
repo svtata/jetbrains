@@ -1,20 +1,24 @@
 package com.jetbrains.pages;
-
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.SetValueOptions.withText;
+import static io.qameta.allure.Allure.step;
 
 public class LoginPage {
 
-    @Step("Enter login")
+    //Annotation @Step shows password and login in the Allure report
     public LoginPage setLogin(String value) {
-        $("#username").sendKeys(value);
+        step("Enter login", () -> {
+            $("#username").setValue(withText(value).sensitive());
+        });
         return this;
     }
 
-    @Step("Enter password")
     public LoginPage setPassword(String value) {
-        $("[name=password]").sendKeys(value);
+        step("Enter password", () -> {
+            $("[name=password]").setValue(withText(value).sensitive());
+        });
         return this;
     }
 
