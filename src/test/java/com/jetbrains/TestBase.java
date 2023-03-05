@@ -6,6 +6,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.jetbrains.configuration.WebConfig;
 import com.jetbrains.helpers.Attach;
 import com.jetbrains.pages.MainPage;
+import com.jetbrains.pages.ProfilePage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -41,6 +42,7 @@ public class TestBase {
     }
 
     MainPage mainPage = new MainPage();
+    ProfilePage profilePage = new ProfilePage();
 
     @AfterEach
     void addAttachments() {

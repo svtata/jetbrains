@@ -20,6 +20,8 @@ public class AuthorizationTests extends TestBase {
                 .checkAccountPage();
     }
 
+
+
     @DisplayName("Logout")
     @Test
     void LogOutTest() {

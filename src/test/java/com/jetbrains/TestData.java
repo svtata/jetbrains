@@ -9,5 +9,6 @@ public class TestData {
     public final static List<String> TABS = List.of("Developer Tools", "Team Tools",
             "Education", "Solutions", "Support",
             "Store");
+    public final static String ACCOUNT_URL = "https://account.jetbrains.com";
 
 }
