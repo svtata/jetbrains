@@ -1,5 +1,6 @@
 package com.jetbrains;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 
 import java.util.HashMap;
@@ -13,6 +14,7 @@ public class AuthApi {
 
     public Map<String, String> getCookiesFromLoginForm() {
         return given()
+                .filter(new AllureRestAssured())
                 .when()
                 .get("https://account.jetbrains.com/login")
                 .then()
@@ -23,6 +25,7 @@ public class AuthApi {
     public Map<String, String> getAuthorizationCookie() {
         Map<String, String> cookies = getCookiesFromLoginForm();
         Map<String, String> newCookies = given()
+                .filter(new AllureRestAssured())
                 .contentType(ContentType.URLENC)
                 .queryParam("_st", cookies.get("_st-JBA"))
                 .formParam("username", USERNAME)
