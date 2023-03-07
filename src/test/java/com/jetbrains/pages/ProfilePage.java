@@ -21,7 +21,6 @@ public class ProfilePage {
             getWebDriver().manage().addCookie(new Cookie(cookieName, cookieValue));
         });
         open(ACCOUNT_URL + "/profile-details");
-        sleep(1000);
         return this;
     }
 
@@ -35,8 +34,6 @@ public class ProfilePage {
 
     @Step("Check title of menu item")
     public void checkTitle(String value) {
-        System.out.println("jvdkjkdsdkjhsdkjgsgd");
         $(".col-sm-12").shouldHave(text(value));
     }
-
 }
