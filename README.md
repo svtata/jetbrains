@@ -17,7 +17,7 @@
 * Telegram notifications
 
 ## Test-cases
-- [x] Login as user
+- [x] Successful/unsuccessful login
 - [x] Logout
 - [x] Going to password recovery page
 - [x] Checking tabs on the main page
@@ -51,7 +51,7 @@ and enviroment variables USERNAME and PASSWORD.
 After the build is done the test results are available in Allure Reports and Allure TestOps:
 ![This is an image](media/jenkins1.png)
 
-Opening Allure Report:
+### Allure Report:
 
 ![This is an image](media/allurereport.png)
 
@@ -59,5 +59,11 @@ Clicking on the Suites tab. We can see detailed tests with attachments:
 
 ![This is an image](media/allurereport2.png)
 
+### Allure TestOps:
 
+![This is an image](media/testops.png)
 
+### Jira integration:
+![This is an image](media/jira.png)                                                                       
+
+![video]()
