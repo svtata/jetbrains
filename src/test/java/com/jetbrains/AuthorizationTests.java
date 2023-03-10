@@ -9,9 +9,9 @@ import static com.jetbrains.TestData.USERNAME;
 
 public class AuthorizationTests extends TestBase {
 
-    @DisplayName("Login as user")
+    @DisplayName("Successful login")
     @Test
-    void LoginTest() {
+    void loginTest() {
         mainPage.openPage()
                 .loginOpenPage()
                 .setLogin(USERNAME)
@@ -20,9 +20,20 @@ public class AuthorizationTests extends TestBase {
                 .checkAccountPage();
     }
 
+    @DisplayName("Unsuccessful login (wrong password)")
+    @Test
+    void unsuccessfulLoginTest() {
+        mainPage.openPage()
+                .loginOpenPage()
+                .setLogin(USERNAME)
+                .setPassword("1234")
+                .clickSignInWithWrongData()
+                .checkErrorMessage();
+    }
+
     @DisplayName("Logout")
     @Test
-    void LogOutTest() {
+    void logOutTest() {
         mainPage.openPage()
                 .loginOpenPage()
                 .setLogin(USERNAME)
@@ -35,7 +46,7 @@ public class AuthorizationTests extends TestBase {
 
     @DisplayName("Going to password recovery page")
     @Test
-    void ForgetPasswordTest() {
+    void forgetPasswordTest() {
         mainPage.openPage()
                 .loginOpenPage()
                 .clickForgotPassword()

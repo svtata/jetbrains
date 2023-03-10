@@ -27,7 +27,6 @@ public class TestBase {
         Configuration.browserSize = driver.getBrowserSize();
 
         if (driver.isRemote()) {
-            System.out.println("Driver is remote. Configuring...");
             Configuration.remote = driver.getRemoteURL();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);

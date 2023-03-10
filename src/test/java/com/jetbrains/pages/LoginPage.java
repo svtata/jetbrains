@@ -1,6 +1,9 @@
 package com.jetbrains.pages;
+
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.SetValueOptions.withText;
 import static io.qameta.allure.Allure.step;
@@ -26,6 +29,17 @@ public class LoginPage {
     public AccountPage clickSignIn() {
         $(".login-submit-btn").click();
         return new AccountPage();
+    }
+
+    @Step("Click on the Submit button with wrong username/password")
+    public LoginPage clickSignInWithWrongData() {
+        $(".login-submit-btn").click();
+        return this;
+    }
+
+    @Step("Check  error message")
+    public void checkErrorMessage() {
+        $(" .js-auth-dialog-form").shouldBe(text("Incorrect username and/or password")).shouldBe(visible);
     }
 
     @Step("Click on the button \"Forgot Password?\"")
