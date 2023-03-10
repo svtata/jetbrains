@@ -1,17 +1,28 @@
 # Automated tests for Jetbrains.com
 [Jetbrains.com](https://www.jetbrains.com/) is official website of Jetbrains company which provides tools for software developers and teams. Automated tests were developed as part of a training project.  
 
-
 ## Tools and technologies
 
-![This is an image](icons/Java.png)![This is an image](icons/Gradle.png)![This is an image](icons/Intelij_IDEA.png)![This is an image](icons/Selenide.png)![This is an image](icons/Selenoid.png)![This is an image](icons/JUnit5.png)![This is an image](icons/Rest-Assured.png)![This is an image](icons/Github.png)![This is an image](icons/Jenkins.png)![This is an image](icons/Allure_Report.png)![This is an image](icons/AllureTestOps.png)![This is an image](icons/Telegram.png)![This is an image](icons/Jira.png)
+![This is an image](icons/Java.png)
+![This is an image](icons/Gradle.png)
+![This is an image](icons/Intelij_IDEA.png)
+![This is an image](icons/Selenide.png)
+![This is an image](icons/Selenoid.png)
+![This is an image](icons/JUnit5.png)
+![This is an image](icons/Rest-Assured.png)
+![This is an image](icons/Github.png)
+![This is an image](icons/Jenkins.png)
+![This is an image](icons/Allure_Report.png)
+![This is an image](icons/AllureTestOps.png)
+![This is an image](icons/Telegram.png)
+![This is an image](icons/Jira.png)
 
 ## What's interesting?
-* ```PageObject```
-* Part of UI tests was decomposed with API tests
+* PageObject
+* Part of UI tests was decomposed with API requests
 * Parametrized build
 * Parametrized tests
-* Configuration with ```Owner``` library
+* Configuration with [Owner library](https://github.com/matteobaccan/owner)  
 * Allure TestOps integration
 * Jira integration
 * Telegram notifications
@@ -51,7 +62,7 @@ and enviroment variables USERNAME and PASSWORD.
 After the build is done the test results are available in Allure Reports and Allure TestOps:
 ![This is an image](media/jenkins1.png)
 
-### Allure Report:
+### [Allure Report](https://jenkins.autotests.cloud/job/C16-sw_tata-jetbrains/26/allure/):
 
 ![This is an image](media/allurereport.png)
 
