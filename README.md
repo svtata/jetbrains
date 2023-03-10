@@ -48,7 +48,16 @@ isRemote = true
 and enviroment variables USERNAME and PASSWORD.
 
 ## Analyzing the results :arrow_down:
+After the build is done the test results are available in Allure Reports and Allure TestOps:
+![This is an image](media/jenkins1.png)
 
+Opening Allure Report:
+
+![This is an image](media/allurereport.png)
+
+Clicking on the Suites tab. We can see detailed tests with attachments:
+
+![This is an image](media/allurereport2.png)
 
 
 
