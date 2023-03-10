@@ -6,7 +6,6 @@
 
 ![This is an image](icons/Java.png)![This is an image](icons/Gradle.png)![This is an image](icons/Intelij_IDEA.png)![This is an image](icons/Selenide.png)![This is an image](icons/Selenoid.png)![This is an image](icons/JUnit5.png)![This is an image](icons/Rest-Assured.png)![This is an image](icons/Github.png)![This is an image](icons/Jenkins.png)![This is an image](icons/Allure_Report.png)![This is an image](icons/AllureTestOps.png)![This is an image](icons/Telegram.png)![This is an image](icons/Jira.png)
 
-
 ## What's interesting?
 * ```PageObject```
 * Part of UI tests was decomposed with API tests
@@ -28,10 +27,28 @@
 ## How to run :runner:
 Local run with default properties (example for PowerShell):
 
-```$env:USERNAME="<your jetbrains login>";$env:PASSWORD="<your jetbrains password>"```
+```powershell
+$env:USERNAME="<your jetbrains login>";$env:PASSWORD="<your jetbrains password>"
+```
 
 ```gradle clean test```
 
 Remote run (Jenkins):
+
+You can run ready build [here.](https://jenkins.autotests.cloud/job/C16-sw_tata-jetbrains/) Click on _"Build with parameters" -> "Build"_
+or set up remote run with file remote.properties:
+
+```browserSize = <browser window size>
+browser = <browser type>
+browserVersion = <browser version>
+baseURL = https://jetbrains.com
+remoteUrl = <server url for remote run>
+isRemote = true
+```
+and enviroment variables USERNAME and PASSWORD.
+
+## Analyzing the results :arrow_down:
+
+
 
 
