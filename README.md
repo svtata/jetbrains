@@ -64,6 +64,14 @@ Clicking on the Suites tab. We can see detailed tests with attachments:
 ![This is an image](media/testops.png)
 
 ### Jira integration:
-![This is an image](media/jira.png)                                                                       
 
-![video]()
+![This is an image](media/jira.png)   
+
+### Notifications on Telegram:   
+Telegram bot sends a brief report to a specified telegram chat by results of each build.   
+
+![This is an image](media/telegram.png)                                                                 
+
+### Example video attachment:
+
+![video](media/videotest.gif)
