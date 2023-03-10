@@ -1,9 +1,9 @@
-package com.jetbrains;
+package com.jetbrains.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.jetbrains.configuration.WebConfig;
+import com.jetbrains.configuration.WebDriverConfig;
 import com.jetbrains.helpers.Attach;
 import com.jetbrains.pages.MainPage;
 import com.jetbrains.pages.ProfilePage;
@@ -16,18 +16,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
-    static WebConfig driver;
+    public static WebDriverConfig driverConfig;
 
     @BeforeAll
     static void beforeAll() {
-        driver = ConfigFactory.create(WebConfig.class, System.getProperties());
-        Configuration.baseUrl = driver.getBaseUrl();
-        Configuration.browser = driver.getBrowser();
-        Configuration.browserVersion = driver.getBrowserVersion();
-        Configuration.browserSize = driver.getBrowserSize();
+        driverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+        Configuration.baseUrl = driverConfig.getBaseUrl();
+        Configuration.browser = driverConfig.getBrowser();
+        Configuration.browserVersion = driverConfig.getBrowserVersion();
+        Configuration.browserSize = driverConfig.getBrowserSize();
 
-        if (driver.isRemote()) {
-            Configuration.remote = driver.getRemoteURL();
+        if (driverConfig.isRemote()) {
+            Configuration.remote = driverConfig.getRemoteURL();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);

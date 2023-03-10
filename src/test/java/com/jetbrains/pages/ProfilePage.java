@@ -1,6 +1,6 @@
 package com.jetbrains.pages;
 
-import com.jetbrains.AuthApi;
+import com.jetbrains.tests.AuthApi;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Cookie;
 
@@ -9,19 +9,27 @@ import java.util.Map;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.jetbrains.TestData.ACCOUNT_URL;
+import static com.jetbrains.tests.TestBase.driverConfig;
 
 public class ProfilePage {
+
+    private final AuthApi authApi = new AuthApi();
+
     @Step("Open profile page as authorized user")
     public ProfilePage openProfilePageWithAuthorization() {
-        AuthApi authApi = new AuthApi();
-        Map<String, String> authorizationCookie = authApi.getAuthorizationCookie();
-        open(ACCOUNT_URL + "/static/images/oauth2/github.svg");
-        authorizationCookie.forEach((cookieName, cookieValue) -> {
-            getWebDriver().manage().addCookie(new Cookie(cookieName, cookieValue));
-        });
-        open(ACCOUNT_URL + "/profile-details");
+        setAuthorizationCookies();
+        open(driverConfig.getAccountBaseUrl() + "/profile-details");
         return this;
+    }
+
+    private void setAuthorizationCookies() {
+        Map<String, String> authorizationCookies = authApi.getAuthorizationCookies();
+        open(driverConfig.getAccountBaseUrl() + "/static/images/oauth2/github.svg");
+        authorizationCookies.forEach((cookieName, cookieValue) ->
+                getWebDriver()
+                        .manage()
+                        .addCookie(new Cookie(cookieName, cookieValue))
+        );
     }
 
     @Step("Open menu item {value}")

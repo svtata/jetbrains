@@ -10,7 +10,7 @@ import static io.qameta.allure.Allure.step;
 
 public class LoginPage {
 
-    //Annotation @Step shows password and login in the Allure report
+    //Annotation @Step exposes password and login in the Allure report
     public LoginPage setLogin(String value) {
         step("Enter login", () -> {
             $("#username").setValue(withText(value).sensitive());
@@ -37,9 +37,11 @@ public class LoginPage {
         return this;
     }
 
-    @Step("Check  error message")
-    public void checkErrorMessage() {
-        $(" .js-auth-dialog-form").shouldBe(text("Incorrect username and/or password")).shouldBe(visible);
+    @Step("Check error message")
+    public void checkErrorMessageIsVisible() {
+        $(".js-auth-dialog-form")
+                .shouldBe(text("Incorrect username and/or password"))
+                .shouldBe(visible);
     }
 
     @Step("Click on the button \"Forgot Password?\"")

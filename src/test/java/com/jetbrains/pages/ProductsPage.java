@@ -8,9 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class ProductsPage {
 
     @Step("Check that filter contains selected language")
-    public ProductsPage checkFilters() {
-        $(".filter__tags").shouldHave(Condition.text("JavaScript, TypeScript"));
-        return this;
+    public void checkNameInFilters(String names) {
+        $(".filter__tags").shouldHave(Condition.text(names));
     }
 }
 

@@ -13,8 +13,7 @@ public class ForgotPasswordPage {
     }
 
     @Step("Check that the button Submit is visible")
-    public ForgotPasswordPage checkButtonSubmit() {
+    public void checkSubmitButton() {
         $(".btn-lg").shouldBe(Condition.visible);
-        return this;
     }
 }

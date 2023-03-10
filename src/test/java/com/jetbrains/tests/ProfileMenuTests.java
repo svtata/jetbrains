@@ -1,5 +1,6 @@
-package com.jetbrains;
+package com.jetbrains.tests;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -7,9 +8,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+@Feature("Tabs in profile menu")
 public class ProfileMenuTests extends TestBase {
 
-    public static Stream<Arguments> checkTabsInProfileMenu() {
+    private static Stream<Arguments> checkTabsInProfileMenu() {
         return Stream.of(
                 Arguments.of("Password", "Security Settings"),
                 Arguments.of("Privacy", "Privacy Settings"),

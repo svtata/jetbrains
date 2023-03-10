@@ -9,11 +9,11 @@ import static com.codeborne.selenide.CollectionCondition.exactTextsCaseSensitive
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.jetbrains.TestData.TABS;
+import static com.jetbrains.tests.TestData.TABS;
 
 public class MainPage {
 
-    @Step("Open main page jetbrains.com")
+    @Step("Open main page jetbrains")
     public MainPage openPage() {
         Selenide.open(Configuration.baseUrl);
         return this;
@@ -26,15 +26,14 @@ public class MainPage {
     }
 
     @Step("Check tabs on the main page")
-    public MainPage checkTab() {
+    public void checkTab() {
         $$("[data-test=\"main-menu-item\"]")
                 .shouldHave(exactTextsCaseSensitiveInAnyOrder(TABS));
-        return this;
     }
 
     @Step("Click on the chip")
-    public ProductsPage chooseChip() {
-        $$("[data-test=\"button\"]").find(text("JavaScript")).click();
+    public ProductsPage chooseChip(String chipName) {
+        $$("[data-test=\"button\"]").find(text(chipName)).click();
         return new ProductsPage();
     }
 

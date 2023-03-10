@@ -3,11 +3,14 @@ package com.jetbrains.configuration;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({"classpath:${env}.properties"})
-
-public interface WebConfig extends Config {
+public interface WebDriverConfig extends Config {
     @Key("baseURL")
     @DefaultValue("https://jetbrains.com")
     String getBaseUrl();
+
+    @Key("baseURL")
+    @DefaultValue("https://account.jetbrains.com")
+    String getAccountBaseUrl();
 
     @Key("browser")
     @DefaultValue("chrome")

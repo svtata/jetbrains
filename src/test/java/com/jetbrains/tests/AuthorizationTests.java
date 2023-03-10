@@ -1,12 +1,13 @@
-package com.jetbrains;
+package com.jetbrains.tests;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.jetbrains.TestData.PASSWORD;
-import static com.jetbrains.TestData.USERNAME;
+import static com.jetbrains.tests.TestData.PASSWORD;
+import static com.jetbrains.tests.TestData.USERNAME;
 
-
+@Feature("Authorization")
 public class AuthorizationTests extends TestBase {
 
     @DisplayName("Successful login")
@@ -28,7 +29,7 @@ public class AuthorizationTests extends TestBase {
                 .setLogin(USERNAME)
                 .setPassword("1234")
                 .clickSignInWithWrongData()
-                .checkErrorMessage();
+                .checkErrorMessageIsVisible();
     }
 
     @DisplayName("Logout")
@@ -41,7 +42,7 @@ public class AuthorizationTests extends TestBase {
                 .clickSignIn()
                 .clickOnUsername()
                 .logOut()
-                .checkLogOut();
+                .checkReturnToMainPage();
     }
 
     @DisplayName("Going to password recovery page")
@@ -51,7 +52,7 @@ public class AuthorizationTests extends TestBase {
                 .loginOpenPage()
                 .clickForgotPassword()
                 .checkInputMail()
-                .checkButtonSubmit();
+                .checkSubmitButton();
     }
 
 }

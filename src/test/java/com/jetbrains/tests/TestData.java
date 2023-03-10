@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.jetbrains.tests;
 
 import java.util.List;
 
@@ -9,6 +9,5 @@ public class TestData {
     public final static List<String> TABS = List.of("Developer Tools", "Team Tools",
             "Education", "Solutions", "Support",
             "Store");
-    public final static String ACCOUNT_URL = "https://account.jetbrains.com";
 
 }

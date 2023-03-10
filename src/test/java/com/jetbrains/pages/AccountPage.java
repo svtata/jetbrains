@@ -2,7 +2,6 @@ package com.jetbrains.pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -27,7 +26,7 @@ public class AccountPage {
     }
 
     @Step("Check that main page is open")
-    public void checkLogOut() {
+    public void checkReturnToMainPage() {
         $(".login-submit-btn").shouldBe(visible);
     }
 
