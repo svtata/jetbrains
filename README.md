@@ -42,7 +42,7 @@ or set up remote run with file remote.properties:
 browser = <browser type>
 browserVersion = <browser version>
 baseURL = https://jetbrains.com
-remoteUrl = <server url for remote run>
+remoteUrl = <server url for remote run, I used Selenoid>
 isRemote = true
 ```
 and enviroment variables USERNAME and PASSWORD.
