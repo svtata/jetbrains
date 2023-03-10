@@ -1,5 +1,6 @@
 package com.jetbrains;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -18,6 +19,7 @@ public class ProfileMenuTests extends TestBase {
         );
     }
 
+    @DisplayName("Check tabs in profile menu")
     @MethodSource(value = "checkTabsInProfileMenu")
     @ParameterizedTest(name = "Menu item {0} contains title {1}")
     void checkProfileMenu(String menuItem, String title) {
