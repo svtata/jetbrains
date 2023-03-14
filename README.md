@@ -46,7 +46,7 @@ $env:USERNAME="<your jetbrains login>";$env:PASSWORD="<your jetbrains password>"
 
 Remote run (Jenkins):
 
-You can run ready build [here.](https://jenkins.autotests.cloud/job/C16-sw_tata-jetbrains/) Click on _"Build with parameters" -> "Build"_
+You can run readymade build [here.](https://jenkins.autotests.cloud/job/C16-sw_tata-jetbrains/) Click on _"Build with parameters" -> "Build"_
 or set up remote run with file remote.properties:
 
 ```browserSize = <browser window size>
