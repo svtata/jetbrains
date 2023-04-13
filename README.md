@@ -22,6 +22,7 @@
 * Part of UI tests was decomposed with API requests
 * Parametrized build
 * Parametrized tests
+* Parallel execution
 * Configuration with [Owner library](https://github.com/matteobaccan/owner)  
 * Allure TestOps integration
 * Jira integration
