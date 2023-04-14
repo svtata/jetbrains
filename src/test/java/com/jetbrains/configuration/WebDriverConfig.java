@@ -8,7 +8,7 @@ public interface WebDriverConfig extends Config {
     @DefaultValue("https://jetbrains.com")
     String getBaseUrl();
 
-    @Key("baseURL")
+    @Key("accountBaseURL")
     @DefaultValue("https://account.jetbrains.com")
     String getAccountBaseUrl();
 
