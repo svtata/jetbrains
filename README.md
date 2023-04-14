@@ -43,7 +43,7 @@ Local run with default properties (example for PowerShell):
 $env:USERNAME="<your jetbrains login>";$env:PASSWORD="<your jetbrains password>"
 ```
 
-```gradle clean test```
+```gradle clean test -Dthreads=<threads amount>```
 
 Remote run (Jenkins):
 
