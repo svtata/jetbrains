@@ -22,6 +22,7 @@
 * Part of UI tests was decomposed with API requests
 * Parametrized build
 * Parametrized tests
+* Parallel execution
 * Configuration with [Owner library](https://github.com/matteobaccan/owner)  
 * Allure TestOps integration
 * Jira integration
@@ -42,7 +43,7 @@ Local run with default properties (example for PowerShell):
 $env:USERNAME="<your jetbrains login>";$env:PASSWORD="<your jetbrains password>"
 ```
 
-```gradle clean test```
+```gradle clean test -Dthreads=<threads amount>```
 
 Remote run (Jenkins):
 
