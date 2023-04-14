@@ -40,9 +40,6 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-    MainPage mainPage = new MainPage();
-    ProfilePage profilePage = new ProfilePage();
-
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last Screenshot");
@@ -51,4 +48,5 @@ public class TestBase {
         Attach.addVideo();
         Selenide.closeWebDriver();
     }
+
 }

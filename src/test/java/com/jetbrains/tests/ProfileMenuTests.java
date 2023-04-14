@@ -1,5 +1,6 @@
 package com.jetbrains.tests;
 
+import com.jetbrains.pages.ProfilePage;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,6 +11,8 @@ import java.util.stream.Stream;
 
 @Feature("Tabs in profile menu")
 public class ProfileMenuTests extends TestBase {
+
+    ProfilePage profilePage = new ProfilePage();
 
     private static Stream<Arguments> checkTabsInProfileMenu() {
         return Stream.of(
@@ -29,4 +32,5 @@ public class ProfileMenuTests extends TestBase {
                 .openMenuItem(menuItem)
                 .checkTitle(title);
     }
+
 }
